@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-ocp-matrix-retrieveproductinstances-graphql
+  labels:
+    app: ms-ocp-matrix-retrieveproductinstances-graphql
+    ocp-app: integracion
+    technology: quarkus-graphql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-ocp-matrix-retrieveproductinstances-graphql
+  template:
+    metadata:
+      labels:
+        app: ms-ocp-matrix-retrieveproductinstances-graphql
+        ocp-app: integracion
+        technology: quarkus-graphql
+    spec:
+      containers:
+        - name: ms-ocp-matrix-retrieveproductinstances-graphql
+          image: quarkus
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          env:
+            - name: QUARKUS_CONFIG_LOCATIONS
+              value: file:/config/application.properties
+            - name: DEPLOYMENT_ENVIRONMENT
+              value: dev
+          livenessProbe:
+            httpGet:
+              path: /q/health/live
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /q/health/ready
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          volumeMounts:
+            - name: app-config
+              mountPath: /config
+          envFrom:
+            - configMapRef:
+                name: ms-ocp-matrix-retrieveproductinstances-configmap
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 50m
+              memory: 64Mi
+      volumes:
+        - name: app-config
+          configMap:
+            name: ms-ocp-matrix-retrieveproductinstances-configmap
+            items:
+              - key: application.properties
+                path: application.properties

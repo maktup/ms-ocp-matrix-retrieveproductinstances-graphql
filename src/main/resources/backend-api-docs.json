@@ -1,0 +1,1548 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Servicio para consultar el parque unificado de clientes",
+        "version": "0.0.1",
+        "title": "Parque Unificado",
+        "contact": {},
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "host": "10.4.43.93:8889",
+    "basePath": "/products-0.0.2",
+    "tags": [
+        {
+            "name": "cache-manager-rest",
+            "description": "Cache Manager Rest"
+        },
+        {
+            "name": "product",
+            "description": "Product"
+        }
+    ],
+    "paths": {
+        "/cache/clear/all": {
+            "delete": {
+                "tags": [
+                    "cache-manager-rest"
+                ],
+                "summary": "clearAllCaches",
+                "operationId": "clearAllCachesUsingDELETE",
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "json",
+                        "description": "json",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/cache/clear/{cacheName}": {
+            "delete": {
+                "tags": [
+                    "cache-manager-rest"
+                ],
+                "summary": "clearCache",
+                "operationId": "clearCacheUsingDELETE",
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "name": "cacheName",
+                        "in": "path",
+                        "description": "cacheName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "json",
+                        "description": "json",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/products": {
+            "get": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "Retrieve list of products in inventory",
+                "operationId": "retrieveProductInstances",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "UNICA-Application",
+                        "in": "header",
+                        "description": "UNICA-Application",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "billingAccount.id",
+                        "in": "query",
+                        "description": "To obtain the list of products stored in the server that are associated to a given account",
+                        "required": false,
+                        "type": "string",
+                        "allowEmptyValue": false
+                    },
+                    {
+                        "name": "depth",
+                        "in": "query",
+                        "description": "To retrieve only subproducts until a certain level. Must be 1 or greater. Depth=1 means the root product does not contain productRelationship, depth=2 means the level 1 products (root's children) do not contain productRelationship... If not sent, maximum depth is assumed",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "allowEmptyValue": false
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "To limit the amount of results",
+                        "required": false,
+                        "type": "string",
+                        "allowEmptyValue": false
+                    },
+                    {
+                        "name": "nationalId",
+                        "in": "query",
+                        "description": "To obtain the list of products matching to a given legal identification value. Typically used combined with nationalIdType",
+                        "required": false,
+                        "type": "string",
+                        "allowEmptyValue": false
+                    },
+                    {
+                        "name": "nationalIdType",
+                        "in": "query",
+                        "description": "To obtain the list of products matching to a given legal identification type (e.g.: DNI, passport, social security number, RUT, CPF, driver's license, etc.). This is typically combined with nationalID to query for specific identity",
+                        "required": false,
+                        "type": "string",
+                        "allowEmptyValue": false
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "To get the results starting from an offset value. Use for pagination",
+                        "required": false,
+                        "type": "string",
+                        "allowEmptyValue": false
+                    },
+                    {
+                        "name": "publicId",
+                        "in": "query",
+                        "description": "to obtain the list of products associated with a given public identifier (e.g.: an msisdn subscription id)",
+                        "required": false,
+                        "type": "string",
+                        "allowEmptyValue": false
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "To obtain the list of products stored in the server that are of a given type",
+                        "required": false,
+                        "type": "string",
+                        "allowEmptyValue": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of product instances provided",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/ProductInstanceType"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/ExceptionType"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/ExceptionType"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/ExceptionType"
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/products/{productId}": {
+            "get": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "Retrieve details of a single product instance in the server",
+                "operationId": "retrieveSingleProductInstance",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "productId",
+                        "in": "path",
+                        "description": "ID of the product instance",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Details of a product instance",
+                        "schema": {
+                            "$ref": "#/definitions/ProductInstanceType"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/ExceptionType"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/ExceptionType"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/ExceptionType"
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        }
+    },
+    "definitions": {
+        "AccountRefType": {
+            "type": "object",
+            "required": [
+                "href",
+                "id"
+            ],
+            "properties": {
+                "@referredType": {
+                    "type": "string",
+                    "description": "Type of referred account e.g.: financial account, billing accountâ€¦"
+                },
+                "billingMethod": {
+                    "type": "string",
+                    "description": "How this account is billed",
+                    "enum": [
+                        "prepaid",
+                        "postpaid",
+                        "control"
+                    ]
+                },
+                "href": {
+                    "type": "string",
+                    "description": "A resource URI pointing to the account resource in the server"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the account"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Account name"
+                }
+            },
+            "title": "AccountRefType",
+            "description": "Reference to an external account that can be queried with the Account Management API."
+        },
+        "CategoryTreeType": {
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "A resource URI pointing to the resource in the OB that stores the category detailed information"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "An identifier for the category"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A human readable category name"
+                },
+                "subcategories": {
+                    "description": "Next level of categories allocated to the component, intended to allow additional segmentation. A product offering may belong to more than one category/subcategory",
+                    "$ref": "#/definitions/CategoryTreeType"
+                }
+            },
+            "title": "CategoryTreeType"
+        },
+        "ComponentProdPriceType": {
+            "type": "object",
+            "required": [
+                "price",
+                "priceType"
+            ],
+            "properties": {
+                "additionalData": {
+                    "type": "array",
+                    "description": "Any additional metadata that the application may supply (implementation and application specific). The metadata are in the form of name-value pairs. It is recommended not to use this parameter and request new information elements to be added in the structure definition. Next releases of the T-Open API will not include support for this additionalData parameter because it has been detected that the extensibility function is not helping the stability of the standard definition of APIs",
+                    "items": {
+                        "$ref": "#/definitions/KeyValueType"
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A human readable pricing short description"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "A unique identifier for the pricing model"
+                },
+                "isMandatory": {
+                    "type": "boolean",
+                    "description": "Indicates if the pricing model must be always included as part of the offering"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A human readable pricing model name"
+                },
+                "price": {
+                    "description": "Base value applied to the price model offering (without taxes). This could refer to a charge, a discount or an allowance",
+                    "$ref": "#/definitions/MoneyType"
+                },
+                "priceType": {
+                    "type": "string",
+                    "description": "Identification for the type of individual pricing component",
+                    "enum": [
+                        "recurring",
+                        "usage",
+                        "one time"
+                    ]
+                },
+                "prodPriceAlteration": {
+                    "type": "array",
+                    "description": "An amount, usually of money, that modifies a price charged for a Product",
+                    "items": {
+                        "$ref": "#/definitions/ProdPriceAlterationType"
+                    }
+                },
+                "recurringChargePeriod": {
+                    "type": "string",
+                    "description": "Identification for the recurring charging periodicity in the case of recurring pricing models (e.g.: â€œmonthlyâ€, â€œyearlyâ€,â€¦)",
+                    "enum": [
+                        "daily",
+                        "weekly",
+                        "monthly",
+                        "yearly"
+                    ]
+                },
+                "taxIncluded": {
+                    "type": "boolean",
+                    "description": "Indication if the price is with taxes (true) or without (false)"
+                },
+                "taxRate": {
+                    "type": "number",
+                    "description": "Taxes (in percentage) applied to the individual pricing component"
+                },
+                "taxType": {
+                    "type": "string",
+                    "description": "Indication on the type of tax applied (e.g. â€œVATâ€, â€œIVAâ€, â€¦)"
+                },
+                "unitOfMeasure": {
+                    "description": "Indication of the criteria to be used for the charging (e.g.: â€œper minuteâ€, â€œper secondâ€, â€œper GBâ€, â€œper 50GBâ€, â€œper licenseâ€, â€œper subscription to offeringâ€â€¦)",
+                    "$ref": "#/definitions/QuantityType"
+                }
+            },
+            "title": "ComponentProdPriceType"
+        },
+        "CoordinatesType": {
+            "type": "object",
+            "required": [
+                "latitude",
+                "longitude"
+            ],
+            "properties": {
+                "latitude": {
+                    "type": "string",
+                    "description": "Geographical longitude of the location.  If value is not available by server then the string  can indicate Ã¢â‚¬ËœUNAVAILABLEÃ¢â‚¬â„¢ or something similar."
+                },
+                "longitude": {
+                    "type": "string",
+                    "description": "Geographical latitude of the location.  If value is not available by server then the    string can indicate Ã¢â‚¬ËœUNAVAILABLEÃ¢â‚¬â„¢ or something similar."
+                }
+            },
+            "title": "CoordinatesType"
+        },
+        "EntityRefType": {
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "@referredType": {
+                    "type": "string",
+                    "description": "Indicates the type of the resource referenced for extensibility/polimorphic purposes of the specific entity (individual/organization for customer, urban/rural for address, ...)"
+                },
+                "city": {
+                    "type": "string",
+                    "description": "Local administrative name such as a city, town, municipality or council,  partido, concello, etc. that might comprise smaller entities"
+                },
+                "coordinates": {
+                    "description": "The validity for the relation with the related object. If not included, the current date is used as starting date and no ending date is defined",
+                    "$ref": "#/definitions/CoordinatesType"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Text describing the referred entity"
+                },
+                "entityType": {
+                    "type": "string",
+                    "description": "Identifier of the type of entity that is referenced (party, address, location, site, channel, product spec, product offering, account, customer, payment, payment method ...)"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "A resource URI pointing to the resource in the OB that stores the related entity detailed information"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "String providing identification of the related entity reported"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "String providing the name of the related entity reported"
+                },
+                "region": {
+                    "type": "string",
+                    "description": "Region, state, or province"
+                },
+                "role": {
+                    "type": "string",
+                    "description": "Indication of the relationship defined between the entity and the order (e.g.: originator, customer, user, â€¦). Supported values are implementation and application specific"
+                },
+                "stateOrProvince": {
+                    "type": "string",
+                    "description": "Region, state, or province"
+                },
+                "validFor": {
+                    "description": "The validity for the relation with the related entity. If not included, the current date is used as starting date and no ending date is defined",
+                    "$ref": "#/definitions/TimePeriodType"
+                }
+            },
+            "title": "EntityRefType"
+        },
+        "ExceptionType": {
+            "type": "object",
+            "required": [
+                "exceptionId",
+                "exceptionText"
+            ],
+            "properties": {
+                "exceptionId": {
+                    "type": "string",
+                    "description": "Identifier of the exception"
+                },
+                "exceptionText": {
+                    "type": "string",
+                    "description": "text describing the exception"
+                },
+                "moreInfo": {
+                    "type": "string",
+                    "description": "additional information on the exception"
+                },
+                "userMessage": {
+                    "type": "string",
+                    "description": "information valuable for the consumer"
+                }
+            },
+            "title": "ExceptionType"
+        },
+        "InternetConnection": {
+            "title": "InternetConnection",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/ProductCharacteristicType"
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "@type",
+                        "value"
+                    ],
+                    "properties": {
+                        "@schemaLocation": {
+                            "type": "string",
+                            "description": "This field provides a link to the schema describing the resource model for the Object defining the characteristics for an internet product"
+                        },
+                        "@type": {
+                            "type": "string",
+                            "description": "type of characteristic information element, defines the format structure of the value information element (string or specific object type)",
+                            "enum": [
+                                "StringType",
+                                "Text",
+                                "MobileQuota",
+                                "InternetConnection",
+                                "TvPackages"
+                            ]
+                        },
+                        "code": {
+                            "type": "string",
+                            "description": "Is the code of characteristic"
+                        },
+                        "value": {
+                            "description": "Object including the characteristic information",
+                            "$ref": "#/definitions/InternetConnectionCharacteristicType"
+                        },
+                        "valueType": {
+                            "type": "string",
+                            "description": "type of characteristic information element, defines the format structure of the value information element (string or object type)",
+                            "enum": [
+                                "String",
+                                "Object"
+                            ]
+                        }
+                    },
+                    "title": "InternetConnection"
+                }
+            ]
+        },
+        "KeyValueType": {
+            "type": "object",
+            "required": [
+                "key",
+                "value"
+            ],
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "Identifier of the specific parameter (implementation and application specific)"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Value allocated to the specific parameter identified by the key name"
+                }
+            },
+            "title": "KeyValueType"
+        },
+        "LocaleRefType": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "title": "LocaleRefType"
+        },
+        "MobileQuota": {
+            "title": "MobileQuota",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/ProductCharacteristicType"
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "@type",
+                        "value"
+                    ],
+                    "properties": {
+                        "@schemaLocation": {
+                            "type": "string",
+                            "description": "This field provides a link to the schema describing the resource model for the Object defining the characteristics for an internet product"
+                        },
+                        "@type": {
+                            "type": "string",
+                            "description": "type of characteristic information element, defines the format structure of the value information element (string or specific object type)",
+                            "enum": [
+                                "StringType",
+                                "Text",
+                                "MobileQuota",
+                                "InternetConnection",
+                                "TvPackages"
+                            ]
+                        },
+                        "code": {
+                            "type": "string",
+                            "description": "Is the code of characteristic"
+                        },
+                        "value": {
+                            "description": "Object including the characteristic information",
+                            "$ref": "#/definitions/MobileQuotaCharacteristicType"
+                        },
+                        "valueType": {
+                            "type": "string",
+                            "description": "type of characteristic information element, defines the format structure of the value information element (string or object type)",
+                            "enum": [
+                                "String",
+                                "Object"
+                            ]
+                        }
+                    },
+                    "title": "MobileQuota"
+                }
+            ]
+        },
+        "MoneyType": {
+            "type": "object",
+            "required": [
+                "amount",
+                "units"
+            ],
+            "properties": {
+                "amount": {
+                    "type": "number",
+                    "description": "Current value set for the money"
+                },
+                "units": {
+                    "type": "string",
+                    "description": "Definition of the currency used. It is implementation specific to define how currencies are defined, it could be defined using ISO 4217"
+                }
+            },
+            "title": "MoneyType"
+        },
+        "PlaceRefType": {
+            "type": "object",
+            "properties": {
+                "@referredType": {
+                    "type": "string"
+                },
+                "coordinates": {
+                    "$ref": "#/definitions/CoordinatesType"
+                },
+                "department": {
+                    "$ref": "#/definitions/LocaleRefType"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "district": {
+                    "$ref": "#/definitions/LocaleRefType"
+                },
+                "entityType": {
+                    "type": "string"
+                },
+                "href": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "province": {
+                    "$ref": "#/definitions/LocaleRefType"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriodType"
+                }
+            },
+            "title": "PlaceRefType"
+        },
+        "ProdPriceAlterationType": {
+            "type": "object",
+            "required": [
+                "priceType"
+            ],
+            "properties": {
+                "additionalData": {
+                    "type": "array",
+                    "description": "Any additional metadata that the application may supply (implementation and application specific). It is recommended not to use this parameter and request new information elements to be added in the structure definition. Next releases of the T-Open API will not include support for this additionalData parameter because it has been detected that the extensibility function is not helping the stability of the standard definition of APIs",
+                    "items": {
+                        "$ref": "#/definitions/KeyValueType"
+                    }
+                },
+                "applicationDuration": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Duration defined as a number of instances of the recurring period to apply the alteration (e.g.: 2 months for the recurring discount)"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A human readable discount short description"
+                },
+                "discountType": {
+                    "type": "string",
+                    "description": "Identification for the type of discount to be applied",
+                    "enum": [
+                        "amount",
+                        "percentage"
+                    ]
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A human readable charging discount model name"
+                },
+                "price": {
+                    "description": "Value of the alteration for the case of discount. This will refer to a monetary value or a percentage",
+                    "$ref": "#/definitions/MoneyType"
+                },
+                "priceCondition": {
+                    "type": "string",
+                    "description": "Text describing the condition that triggers the alteration to be applied"
+                },
+                "priceType": {
+                    "type": "string",
+                    "description": "Identification for the type of individual alteration type (recurring discount, one time discount, recurring allowance, one time allowance)"
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "Priority level for applying this alteration among all the defined alterations on the order item price"
+                },
+                "recurringChargePeriod": {
+                    "type": "string",
+                    "description": "Identification for the recurring periodicity in the case of recurring alteration models (e.g.: â€œmonthlyâ€, â€œyearlyâ€,â€¦)",
+                    "enum": [
+                        "daily",
+                        "weekly",
+                        "monthly",
+                        "yearly"
+                    ]
+                },
+                "unitOfMeasure": {
+                    "description": "Unit of measure to apply the alteration (e.g.: â€œper 1 minuteâ€, â€œper 1 secondâ€, â€œper 1 GBâ€, â€œper 50 GBâ€, â€œper 1 licenseâ€, â€œsubscriptionâ€,â€¦)",
+                    "$ref": "#/definitions/QuantityType"
+                },
+                "validFor": {
+                    "description": "The validity for the discount model If not included, the current date is used as starting date and no ending date is defined",
+                    "$ref": "#/definitions/TimePeriodType"
+                }
+            },
+            "title": "ProdPriceAlterationType"
+        },
+        "ProductCharacteristicType": {
+            "type": "object",
+            "required": [
+                "@type"
+            ],
+            "discriminator": "@type",
+            "properties": {
+                "@type": {
+                    "type": "string",
+                    "description": "type of characteristic information element, defines the format structure of the value information element (string or specific object type)",
+                    "enum": [
+                        "StringType",
+                        "Text",
+                        "MobileQuota",
+                        "InternetConnection",
+                        "TvPackages"
+                    ]
+                },
+                "code": {
+                    "type": "string",
+                    "description": "Is the code of characteristic"
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "type of characteristic information element, defines the format structure of the value information element (string or object type)",
+                    "enum": [
+                        "String",
+                        "Object"
+                    ]
+                }
+            },
+            "title": "ProductCharacteristicType"
+        },
+        "ProductInstanceType": {
+            "type": "object",
+            "required": [
+                "href",
+                "id",
+                "name",
+                "relatedParty"
+            ],
+            "properties": {
+                "additionalData": {
+                    "type": "array",
+                    "description": "Any further information needed by the server to fill the product definition (implementation and application specific) in the form of name-value pairs. It is recommended not to use this parameter and request new information elements to be added in the structure definition. Next releases of the T-Open API will not include support for this additionalData parameter because it has been detected that the extensibility function is not helping the stability of the standard definition of APIs",
+                    "items": {
+                        "$ref": "#/definitions/KeyValueType"
+                    }
+                },
+                "agreement": {
+                    "type": "array",
+                    "description": "A list of agreement references. An agreement represents a contract or arrangement, either written or verbal and sometimes enforceable by law, such as a service level agreement or a customer price agreement",
+                    "items": {
+                        "$ref": "#/definitions/EntityRefType"
+                    }
+                },
+                "billingAccount": {
+                    "type": "array",
+                    "description": "Reference to the billing accounts that are associated to the product instance. This attribute is an array to allow scenarios where a product or service is shared for payment between different accounts",
+                    "items": {
+                        "$ref": "#/definitions/AccountRefType"
+                    }
+                },
+                "category": {
+                    "type": "array",
+                    "description": "List of categories/subcategories allocated to the ticket, intended to allow segmentation. A product may belong to more than one category",
+                    "items": {
+                        "$ref": "#/definitions/CategoryTreeType"
+                    }
+                },
+                "characteristic": {
+                    "type": "array",
+                    "description": "List of configurable characteristics of the product to instantiate or to modify",
+                    "items": {
+                        "$ref": "#/definitions/ProductCharacteristicType"
+                    }
+                },
+                "creatingOrder": {
+                    "description": "Reference to the order which created the product instance in the server",
+                    "$ref": "#/definitions/EntityRefType"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Some text providing a user-friendly detailed description of the product instance"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "A resource URI pointing to the resource in the OB that stores the product instance detailed information (e.g.: productInventory/v1/products/{productId})"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique Identifier within the server for the product instance reported"
+                },
+                "isBundle": {
+                    "type": "boolean",
+                    "description": "Indicates if the product is a single entity (false) or if it is actually composed of subproducts itself (true)"
+                },
+                "isCustomerVisible": {
+                    "type": "boolean",
+                    "description": "Indicates if the product is the product is visible by the customer (true) or not (false)"
+                },
+                "modifyingOrders": {
+                    "type": "array",
+                    "description": "Reference to the orders that modified the product instance in the server",
+                    "items": {
+                        "$ref": "#/definitions/EntityRefType"
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A human readable product name"
+                },
+                "orderDate": {
+                    "type": "string",
+                    "description": "The date when the product was created, when the order that triggered the product creation was registered"
+                },
+                "paymentMean": {
+                    "description": "Reference to the type of payment mode to be used for the product or service",
+                    "$ref": "#/definitions/EntityRefType"
+                },
+                "place": {
+                    "type": "array",
+                    "description": "Used to define a place useful for the product (for example an installation site)",
+                    "items": {
+                        "$ref": "#/definitions/PlaceRefType"
+                    }
+                },
+                "productOffering": {
+                    "description": "Reference to the Offering Identifier within the product catalogue that includes the description of the product that has been created for the customer",
+                    "$ref": "#/definitions/EntityRefType"
+                },
+                "productPrice": {
+                    "type": "array",
+                    "description": "List of price models applied to the instantiated product",
+                    "items": {
+                        "$ref": "#/definitions/ComponentProdPriceType"
+                    }
+                },
+                "productRelationship": {
+                    "type": "array",
+                    "description": "Used to define subproducts composing a bundled product or products already owned by the customer but with a relationship with the one instantiated in the inventory",
+                    "items": {
+                        "$ref": "#/definitions/RelatedProductType"
+                    }
+                },
+                "productSerialNumber": {
+                    "type": "string",
+                    "description": "Any commercial code string that can be used for internal accounting to uniquely identify the product. It is the serial number for the product. This is typically applicable to tangible products"
+                },
+                "productSpec": {
+                    "description": "Reference to the Product specification in the product catalogue that provides the description of the characteristics that define the configuration of the product instance",
+                    "$ref": "#/definitions/EntityRefType"
+                },
+                "productType": {
+                    "type": "string",
+                    "description": "Indication of the type of product instance registered. Supported values are implementation and application specific",
+                    "enum": [
+                        "mobile",
+                        "landline",
+                        "ipTv",
+                        "cableTv",
+                        "email",
+                        "broadband",
+                        "bundle",
+                        "sva",
+                        "sim",
+                        "device",
+                        "bolton",
+                        "dth",
+                        "international",
+                        "PLAN",
+                        "OTT",
+                        "advanced"
+                    ]
+                },
+                "publicId": {
+                    "type": "string",
+                    "description": "Public number associated to the product (e.g.: use of an msisdn to refer to a subscription to a mobileline product)"
+                },
+                "realizingResource": {
+                    "type": "array",
+                    "description": "Reference to the resources that are created/associated as part of the instantiation of the product",
+                    "items": {
+                        "$ref": "#/definitions/EntityRefType"
+                    }
+                },
+                "relatedObject": {
+                    "type": "array",
+                    "description": "List of Objects or resources associated to an order (e.g.: framework agreement, opportunity, â€¦)",
+                    "items": {
+                        "$ref": "#/definitions/RelatedObjectType"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "description": "List of individuals (e.g.: support agent, system impacted, reviewer, â€¦) associated to the order",
+                    "items": {
+                        "$ref": "#/definitions/RelatedPartyRefType"
+                    }
+                },
+                "startDate": {
+                    "type": "string",
+                    "description": "The date from which the product must start providing service"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The status to which the product is set",
+                    "enum": [
+                        "new",
+                        "created",
+                        "active",
+                        "pending",
+                        "aborted",
+                        "suspended",
+                        "cancelled",
+                        "cancelling",
+                        "terminated",
+                        "terminating",
+                        "information",
+                        "trial",
+                        "keep"
+                    ]
+                },
+                "subStatus": {
+                    "type": "string",
+                    "description": "Substatus in order to define a second status level"
+                },
+                "tags": {
+                    "type": "array",
+                    "description": "ist of freely defined strings that tag the product based on some criteria. This can be used by consumer application to define presentation logic",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "terminationDate": {
+                    "type": "string",
+                    "description": "The date when the product will stop providing service"
+                },
+                "total": {
+                    "type": "string"
+                }
+            },
+            "title": "ProductInstanceType"
+        },
+        "ProductRefInfoType": {
+            "type": "object",
+            "properties": {
+                "additionalData": {
+                    "type": "array",
+                    "description": "Any further information needed by the server to fill the product ref definition (implementation and application specific) in the form of name-value pairs. It is recommended not to use this parameter and request new information elements to be added in the structure definition. Next releases of the T-Open API will not include support for this additionalData parameter because it has been detected that the extensibility function is not helping the stability of the standard definition of APIs",
+                    "items": {
+                        "$ref": "#/definitions/KeyValueType"
+                    }
+                },
+                "category": {
+                    "type": "array",
+                    "description": "A class defining the type of product instantiated (the category allocated to the product specification that defines the instantiated product). A product may belong to more than one class",
+                    "items": {
+                        "$ref": "#/definitions/CategoryTreeType"
+                    }
+                },
+                "characteristic": {
+                    "type": "array",
+                    "description": "List of specific product parameters configured for the product instance associated to an account",
+                    "items": {
+                        "$ref": "#/definitions/ProductCharacteristicType"
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Some text providing a user-friendly detailed description of the product instance"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "A resource URI pointing to the resource in the OB that stores the product instance detailed information (e.g.: /productinventory/v1/products/{productId})"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique Identifier within the server (product inventory) for the product instance that is associated to an account"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A human readable product name"
+                },
+                "parentAssignproductId": {
+                    "type": "string"
+                },
+                "place": {
+                    "type": "array",
+                    "description": "Used to define a place useful for the product (for example a delivery geographical place). It is an array because a given product could be delivered in different places, for instance if the quantity is more than 1, and/or it can be associated to different places, on for delivery and another one for installation",
+                    "items": {
+                        "$ref": "#/definitions/EntityRefType"
+                    }
+                },
+                "productPrice": {
+                    "type": "array",
+                    "description": "List of price models applied to the instantiated product",
+                    "items": {
+                        "$ref": "#/definitions/ComponentProdPriceType"
+                    }
+                },
+                "productRelationship": {
+                    "type": "array",
+                    "description": "Used to define subproducts composing a bundled product or products already owned by the customer but with a relationship with the one included in the order",
+                    "items": {
+                        "$ref": "#/definitions/RelatedProductType"
+                    }
+                },
+                "productSpec": {
+                    "description": "Reference to the Product specification in the product catalogue that provides the description of the characteristics that define the configuration of a product associated to an account",
+                    "$ref": "#/definitions/EntityRefType"
+                },
+                "productType": {
+                    "type": "string",
+                    "description": "Indication of the type of product instance registered. Supported values are implementation and application specific",
+                    "enum": [
+                        "mobile",
+                        "landline",
+                        "ipTv",
+                        "cableTv",
+                        "email",
+                        "broadband",
+                        "bundle",
+                        "sva",
+                        "sim",
+                        "device",
+                        "bolton",
+                        "dth"
+                    ]
+                },
+                "publicId": {
+                    "type": "string",
+                    "description": "Public number associated to the product (e.g.: use of an msisdn to refer to a subscription to a mobileline product)"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "description": "List of individuals (e.g.: user, â€¦) associated to a product instance",
+                    "items": {
+                        "$ref": "#/definitions/RelatedPartyRefType"
+                    }
+                },
+                "startDate": {
+                    "type": "string",
+                    "description": "The date from which the product must start providing service"
+                },
+                "tags": {
+                    "type": "array",
+                    "description": "ist of freely defined strings that tag the product based on some criteria. This can be used by consumer application to define presentation logic",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "terminationDate": {
+                    "type": "string",
+                    "description": "The date when the product will stop providing service"
+                }
+            },
+            "title": "ProductRefInfoType"
+        },
+        "QuantityType": {
+            "type": "object",
+            "required": [
+                "amount",
+                "units"
+            ],
+            "properties": {
+                "amount": {
+                    "type": "number",
+                    "description": "Current number of units set for the quantity"
+                },
+                "maximum": {
+                    "type": "number",
+                    "description": "Maximum number of units allowed for the quantity"
+                },
+                "minimum": {
+                    "type": "number",
+                    "description": "Minimum number of units allowed for the quantity"
+                },
+                "units": {
+                    "type": "string",
+                    "description": "Definition of the units used for the quantity (number of licenses, minutes, Megabytes, â€¦). Implementation specific"
+                }
+            },
+            "title": "QuantityType"
+        },
+        "RelatedObjectType": {
+            "type": "object",
+            "required": [
+                "href"
+            ],
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "A resource URI pointing to the resource in the OB that stores the related object detailed information"
+                },
+                "involvement": {
+                    "type": "string",
+                    "description": "Indication of the relationship defined between the object and the product reported (e.g.: disputed invoice, adjusted invoice, related product, opportunity, framework agreeement,â€¦). Supported values are implementation and application specific"
+                },
+                "reference": {
+                    "type": "string",
+                    "description": "String providing identification of the related object reported (an id or a name)"
+                },
+                "validFor": {
+                    "description": "The validity for the relation with the related object. If not included, the current date is used as starting date and no ending date is defined",
+                    "$ref": "#/definitions/TimePeriodType"
+                }
+            },
+            "title": "RelatedObjectType"
+        },
+        "RelatedPartyRefType": {
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "@referredType": {
+                    "type": "string",
+                    "description": "Indicates the type of the resource referenced for extensibility/polimorphic purposes of the specific entity (individual/organization for customer, urban/rural for address, ...)"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Text describing the referred related party"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "A resource URI pointing to the resource in the OB that stores the related party detailed information"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "String providing identification of the related party reported"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "String providing the name of the related party reported"
+                },
+                "nationalId": {
+                    "type": "string",
+                    "description": "To obtain the list of products matching to a given legal identification value. Typically used combined with nationalIdType"
+                },
+                "nationalIdType": {
+                    "type": "string",
+                    "description": "To obtain the list of products matching to a given legal identification type (e.g.: DNI, passport, social security number, RUC, CPF, driver's license, etc.). This is typically combined with nationalID to query for specific identity"
+                },
+                "role": {
+                    "type": "string",
+                    "description": "Indication of the relationship defined between the related party and the order (e.g.: originator, customer, user, â€¦). Supported values are implementation and application specific"
+                },
+                "validFor": {
+                    "description": "The validity for the relation with the related party. If not included, the current date is used as starting date and no ending date is defined",
+                    "$ref": "#/definitions/TimePeriodType"
+                }
+            },
+            "title": "RelatedPartyRefType"
+        },
+        "RelatedProductType": {
+            "type": "object",
+            "required": [
+                "product"
+            ],
+            "properties": {
+                "product": {
+                    "description": "Definition of the related product (e.g.: the bundled subproduct)",
+                    "$ref": "#/definitions/ProductRefInfoType"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "A categorization of the relationship defined between the product referenced and the original entity (e.g.: subproduct, bundled, dependent,â€¦)"
+                }
+            },
+            "title": "RelatedProductType"
+        },
+        "StringType": {
+            "title": "StringType",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/ProductCharacteristicType"
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "@type",
+                        "name",
+                        "value"
+                    ],
+                    "properties": {
+                        "@type": {
+                            "type": "string",
+                            "description": "type of characteristic information element, defines the format structure of the value information element (string or specific object type)",
+                            "enum": [
+                                "StringType",
+                                "Text",
+                                "MobileQuota",
+                                "InternetConnection",
+                                "TvPackages"
+                            ]
+                        },
+                        "code": {
+                            "type": "string",
+                            "description": "Is the code of characteristic"
+                        },
+                        "name": {
+                            "type": "string",
+                            "description": "Name of the product string characteristic"
+                        },
+                        "value": {
+                            "type": "string",
+                            "description": "the value that the characteristic can take on as string"
+                        },
+                        "valueType": {
+                            "type": "string",
+                            "description": "type of characteristic information element, defines the format structure of the value information element (string or object type)",
+                            "enum": [
+                                "String",
+                                "Object"
+                            ]
+                        }
+                    },
+                    "title": "StringType"
+                }
+            ]
+        },
+        "Text": {
+            "title": "Text",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/ProductCharacteristicType"
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "@type",
+                        "name",
+                        "value"
+                    ],
+                    "properties": {
+                        "@type": {
+                            "type": "string",
+                            "description": "type of characteristic information element, defines the format structure of the value information element (string or specific object type)",
+                            "enum": [
+                                "StringType",
+                                "Text",
+                                "MobileQuota",
+                                "InternetConnection",
+                                "TvPackages"
+                            ]
+                        },
+                        "code": {
+                            "type": "string",
+                            "description": "Is the code of characteristic"
+                        },
+                        "name": {
+                            "type": "string",
+                            "description": "First part of the textual descriptive characteristic"
+                        },
+                        "value": {
+                            "type": "string",
+                            "description": "Second part of the textual descriptive characteristic"
+                        },
+                        "valueType": {
+                            "type": "string",
+                            "description": "type of characteristic information element, defines the format structure of the value information element (string or object type)",
+                            "enum": [
+                                "String",
+                                "Object"
+                            ]
+                        }
+                    },
+                    "title": "Text"
+                }
+            ]
+        },
+        "TimePeriodType": {
+            "type": "object",
+            "required": [
+                "startDateTime"
+            ],
+            "properties": {
+                "endDateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "An instant of time, ending of the TimePeriod. If not included, then the period has no ending date"
+                },
+                "startDateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "An instant of time, starting of the TimePeriod"
+                }
+            },
+            "title": "TimePeriodType"
+        },
+        "TvPackages": {
+            "title": "TvPackages",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/ProductCharacteristicType"
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "@type",
+                        "value"
+                    ],
+                    "properties": {
+                        "@schemaLocation": {
+                            "type": "string",
+                            "description": "This field provides a link to the schema describing the resource model for the Object defining the characteristics for a TV product"
+                        },
+                        "@type": {
+                            "type": "string",
+                            "description": "type of characteristic information element, defines the format structure of the value information element (string or specific object type)",
+                            "enum": [
+                                "StringType",
+                                "Text",
+                                "MobileQuota",
+                                "InternetConnection",
+                                "TvPackages"
+                            ]
+                        },
+                        "code": {
+                            "type": "string",
+                            "description": "Is the code of characteristic"
+                        },
+                        "value": {
+                            "description": "Object including the characteristic information",
+                            "$ref": "#/definitions/TvPackagesCharacteristicType"
+                        },
+                        "valueType": {
+                            "type": "string",
+                            "description": "type of characteristic information element, defines the format structure of the value information element (string or object type)",
+                            "enum": [
+                                "String",
+                                "Object"
+                            ]
+                        }
+                    },
+                    "title": "TvPackages"
+                }
+            ]
+        },
+        "VoiceQuotaType": {
+            "type": "object",
+            "description": "Voice quota information for mobile products",
+            "properties": {
+                "voiceAllowance": {
+                    "type": "number",
+                    "description": "Voice allowance value (-1 means unlimited)"
+                },
+                "unit": {
+                    "type": "string",
+                    "description": "Unit of measurement (e.g., seconds, minutes)"
+                },
+                "timeBands": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Time bands when the quota applies"
+                },
+                "origins": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Origin locations (e.g., home, roaming)"
+                },
+                "destinations": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Destination types (e.g., any, national)"
+                }
+            }
+        },
+        "DataQuotaType": {
+            "type": "object",
+            "description": "Data quota information for mobile products",
+            "properties": {
+                "dataAllowance": {
+                    "type": "number",
+                    "description": "Data allowance value"
+                },
+                "unit": {
+                    "type": "string",
+                    "description": "Unit of measurement (e.g., GB, MB)"
+                },
+                "timeBands": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Time bands when the quota applies"
+                },
+                "origins": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Origin locations"
+                },
+                "destinations": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Destination types"
+                }
+            }
+        },
+        "SmsQuotaType": {
+            "type": "object",
+            "description": "SMS quota information for mobile products",
+            "properties": {
+                "smsAllowance": {
+                    "type": "number",
+                    "description": "SMS allowance value"
+                },
+                "timeBands": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Time bands when the quota applies"
+                },
+                "origins": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Origin locations"
+                },
+                "destinations": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Destination types"
+                }
+            }
+        },
+        "MobileQuotaCharacteristicType": {
+            "type": "object",
+            "description": "Value object for MobileQuota characteristic containing voice, data, and SMS quotas",
+            "properties": {
+                "voiceQuota": {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/VoiceQuotaType" },
+                    "description": "List of voice quotas"
+                },
+                "dataQuota": {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/DataQuotaType" },
+                    "description": "List of data quotas"
+                },
+                "smsQuota": {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/SmsQuotaType" },
+                    "description": "List of SMS quotas"
+                }
+            }
+        },
+        "InternetConnectionCharacteristicType": {
+            "type": "object",
+            "description": "Value object for InternetConnection characteristic - structure TBD based on actual response",
+            "additionalProperties": true
+        },
+        "TvPackagesCharacteristicType": {
+            "type": "object",
+            "description": "Value object for TvPackages characteristic - structure TBD based on actual response",
+            "additionalProperties": true
+        }
+    }
+}

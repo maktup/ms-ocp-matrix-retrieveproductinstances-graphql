@@ -1,0 +1,12 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: ms-ocp-matrix-retrieveproductinstances-graphql
+spec:
+  to:
+    kind: Service
+    name: ms-ocp-matrix-retrieveproductinstances-graphql
+  port:
+    targetPort: http
+  tls:
+    termination: edge

@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ms-ocp-matrix-retrieveproductinstances-configmap
+data:
+  application.properties: |
+    quarkus.banner.enabled=true
+    quarkus.http.port=8080
+
+    # Backend REST
+    quarkus.rest-client.product-inventory-service.url=http://10.4.43.93:8889/products-0.0.2
+    quarkus.rest-client.product-inventory-service.connect-timeout=3000
+    quarkus.rest-client.product-inventory-service.read-timeout=10000
+
+    # Fault Tolerance (rest client)
+    mp.fault.tolerance.org.acme.ProductInventoryService/getProducts/timeout.value=13s
+    mp.fault.tolerance.org.acme.ProductInventoryService/getProducts/circuit-breaker.requestVolumeThreshold=4
+    mp.fault.tolerance.org.acme.ProductInventoryService/getProducts/circuit-breaker.delay=15s
+    mp.fault.tolerance.org.acme.ProductInventoryService/getProducts/circuit-breaker.successThreshold=2
+
+    # Logging
+    quarkus.log.category."org.acme".level=DEBUG
+    quarkus.log.category."org.jboss.resteasy.reactive.client".level=DEBUG
+
+    # Health endpoints: /q/health/live and /q/health/ready (ya expuestos por Quarkus)

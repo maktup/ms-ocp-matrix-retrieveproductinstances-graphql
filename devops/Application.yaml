@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ms-ocp-matrix-retrieveproductinstances-graphql-dev
+spec:
+  destination:
+    namespace: development-diversificacion
+    server: https://api.ocpnprod7.gp.inet:6443
+  source:
+    repoURL: https://bitbucket.org/integratelperu/development-diversificacion.git
+    targetRevision: main
+    path: ms-ocp-matrix-retrieveproductinstances-graphql
+  project: gitops-dev-project

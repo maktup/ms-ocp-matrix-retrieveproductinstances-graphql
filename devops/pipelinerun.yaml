@@ -1,0 +1,43 @@
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  generateName: build-and-publish-matrix-graphql-
+spec:
+  pipelineRef:
+    name: build-and-publish
+  params:
+    - name: APP_REPO_URL
+      value: "https://bitbucket.org/integratelperu/ms-ocp-matrix-retrieveproductinstances-graphql.git"
+    - name: APP_GIT_REVISION
+      value: "feature/TISAP4-1852"
+    - name: MANIFEST_REPO_URL
+      value: "https://bitbucket.org/integratelperu/development-diversificacion.git"
+    - name: MANIFEST_GIT_REVISION
+      value: "main"
+    - name: MANIFEST_OVERLAY_PATH
+      value: "ms-ocp-matrix-retrieveproductinstances-graphql"
+    - name: KUSTOMIZE_IMAGE_NAME_IN_OVERLAY
+      value: "quarkus"
+    - name: BUILD_TYPE
+      value: "jvm"
+    - name: MAVEN_IMAGE
+      value: "quay.io/quarkus/ubi-quarkus-mandrel-builder-image:23.1.8.0-Final-java21-amd64"
+    - name: APP_IMAGE_NAME
+      value: "ms-ocp-matrix-retrieveproductinstances-graphql"
+    - name: REGISTRY_URL
+      value: "image-registry.openshift-image-registry.svc:5000/development-diversificacion"
+    - name: BUILD_TLS_VERIFY
+      value: "false"
+  workspaces:
+    - name: app-source
+      persistentVolumeClaim:
+        claimName: source-repo-pvc
+    - name: manifest-source
+      persistentVolumeClaim:
+        claimName: manifest-repo-pvc
+    - name: maven-cache
+      persistentVolumeClaim:
+        claimName: maven-repo-cache-pvc
+    - name: maven-settings
+      configMap:
+        name: mvn-settings-pipeline

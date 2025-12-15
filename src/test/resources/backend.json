@@ -1,0 +1,1296 @@
+[
+    {
+        "id": "103546522",
+        "href": "/productInventory/v2/products/103546522",
+        "publicId": "951097003",
+        "description": "Control Caribu Movistar Libre",
+        "name": "Plan Bolsa CORP RPM COMUNIDAD TDI - CF 7",
+        "productType": "mobile",
+        "isBundle": false,
+        "isCustomerVisible": true,
+        "startDate": "2022-06-02T15:00:14-05:00",
+        "status": "active",
+        "billingAccount": [
+            {
+                "id": "731649614",
+                "href": "/accounts/v3/accounts/731649614",
+                "name": "Financial Account",
+                "billingMethod": "control"
+            },
+            {
+                "id": "40016174",
+                "href": "/accounts/v3/accounts/40016174",
+                "name": "Billing Customer",
+                "billingMethod": "control"
+            },
+            {
+                "id": "731649723",
+                "href": "/accounts/v3/accounts/731649723",
+                "name": "Billing Arrangement"
+            }
+        ],
+        "productOffering": {
+            "id": "4417968",
+            "href": "/productCatalog/v2/offerings/4417968",
+            "name": "CONTROLCARIBUMOVISTARLIBRE",
+            "description": "Control Caribu Movistar Libre"
+        },
+        "productSpec": {
+            "href": "undefined",
+            "name": "WirelessMainComponent"
+        },
+        "characteristic": [
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "code": "15044",
+                "name": "SubscriberGroupValue",
+                "value": "PRE1"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "code": "734398409",
+                "name": "RLC_Vanity Class",
+                "value": "Regular"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "code": "9281",
+                "name": "AllowedStartDateforRetention",
+                "value": "02/06/2022 14:58:25+DT"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "code": "9231",
+                "name": "Network",
+                "value": "GSM"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "code": "9251",
+                "name": "IMSIR",
+                "value": "716060855711935"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "code": "9241",
+                "name": "IMSI",
+                "value": "716060855711935"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "code": "9271",
+                "name": "UnrecognizedOwnershipIndicator",
+                "value": "No"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "code": "9211",
+                "name": "PortingInd",
+                "value": "N"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "code": "1470631",
+                "name": "VoluntarySuspendStartDate",
+                "value": "+DT"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "code": "19234",
+                "name": "ResourceCategory",
+                "value": "Regular"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "code": "9221",
+                "name": "NumberType",
+                "value": "CPP"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "code": "9301",
+                "name": "ExternalPlatformSVABlocking",
+                "value": "N"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "code": "7601",
+                "name": "MSISDN",
+                "value": "951097003"
+            },
+            {
+                "@type": "MobileQuota",
+                "valueType": "Object",
+                "value": {
+                    "voiceQuota": [
+                        {
+                            "voiceAllowance": -1,
+                            "unit": "seconds",
+                            "timeBands": [
+                                "all"
+                            ],
+                            "origins": [
+                                "home"
+                            ],
+                            "destinations": [
+                                "any"
+                            ]
+                        }
+                    ],
+                    "dataQuota": [
+                        {
+                            "dataAllowance": 6,
+                            "unit": "GB",
+                            "timeBands": [
+                                "all"
+                            ],
+                            "origins": [
+                                "home"
+                            ],
+                            "destinations": [
+                                "any"
+                            ]
+                        }
+                    ],
+                    "smsQuota": [
+                        {
+                            "smsAllowance": 1000,
+                            "timeBands": [
+                                "all"
+                            ],
+                            "origins": [
+                                "home"
+                            ],
+                            "destinations": [
+                                "any"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "name": "indicatorMT",
+                "value": "N"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "code": "4360638",
+                "name": "SharingDataConsumer",
+                "value": "No"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "code": "4360638",
+                "name": "SharingDataOwner",
+                "value": "No"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "name": "Amigos y Familia (Dúos)",
+                "value": "0"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "name": "Beneficios del Plan",
+                "value": "0"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "name": "Limite de Consumo Adicional",
+                "value": "Autogestionado"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "name": "cycleBilling",
+                "value": "15"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "name": "ciclyBilling",
+                "value": "15"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "name": "originSystem",
+                "value": "ALDM"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "name": "OTTProductIdentifier",
+                "value": "951097003"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "code": "7601",
+                "name": "msisdn",
+                "value": "951097003"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "name": "employeeDiscount",
+                "value": "N"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "name": "LMAIndicator",
+                "value": "N"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "name": "indicatorStatusMT",
+                "value": "undefined"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "name": "subscriberId",
+                "value": "57384223"
+            },
+            {
+                "@type": "StringType",
+                "valueType": "String",
+                "name": "OriginalActivationDate",
+                "value": "2013-07-20T00:00:00-05:00"
+            }
+        ],
+        "realizingResource": [
+            {
+                "id": "103546547",
+                "href": "/resourceInventoryManagement/v2/103546547",
+                "name": "SimDevice",
+                "role": "Activo",
+                "entityType": "WRLS",
+                "@referredType": "Movil",
+                "description": "SIM y Dispositivo"
+            },
+            {
+                "id": "7362054509",
+                "href": "/resourceInventoryManagement/v2/7362054509",
+                "name": "PromotionsandDiscounts",
+                "role": "Activo",
+                "entityType": "WRLS",
+                "@referredType": "Movil",
+                "description": "Promociones y Descuentos Especiales"
+            },
+            {
+                "id": "103546493",
+                "href": "/resourceInventoryManagement/v2/103546493",
+                "name": "Data",
+                "role": "Activo",
+                "entityType": "WRLS",
+                "@referredType": "Movil",
+                "description": "Datos"
+            },
+            {
+                "id": "103546515",
+                "href": "/resourceInventoryManagement/v2/103546515",
+                "name": "Plan",
+                "role": "Activo",
+                "entityType": "WRLS",
+                "@referredType": "Movil",
+                "description": "Plan"
+            },
+            {
+                "id": "9229445463",
+                "href": "/resourceInventoryManagement/v2/9229445463",
+                "name": "BoltOnsData",
+                "role": "Activo",
+                "entityType": "WRLS",
+                "@referredType": "Movil",
+                "description": "Paquete de Datos"
+            },
+            {
+                "id": "7731466499",
+                "href": "/resourceInventoryManagement/v2/7731466499",
+                "name": "Roaming",
+                "role": "Activo",
+                "entityType": "WRLS",
+                "@referredType": "Movil",
+                "description": "Roaming"
+            },
+            {
+                "id": "103546499",
+                "href": "/resourceInventoryManagement/v2/103546499",
+                "name": "OutgoingCall",
+                "role": "Activo",
+                "entityType": "WRLS",
+                "@referredType": "Movil",
+                "description": "Llamada saliente"
+            },
+            {
+                "id": "268351725",
+                "href": "/resourceInventoryManagement/v2/268351725",
+                "name": "International",
+                "role": "Activo",
+                "entityType": "WRLS",
+                "@referredType": "Movil",
+                "description": "Internacional (LDI)"
+            },
+            {
+                "id": "103546506",
+                "href": "/resourceInventoryManagement/v2/103546506",
+                "name": "Voice",
+                "role": "Activo",
+                "entityType": "WRLS",
+                "@referredType": "Movil",
+                "description": "Voz"
+            },
+            {
+                "id": "9229445471",
+                "href": "/resourceInventoryManagement/v2/9229445471",
+                "name": "BoltOnsRoamingData",
+                "role": "Activo",
+                "entityType": "WRLS",
+                "@referredType": "Movil",
+                "description": "Paquetes Roaming Datos"
+            },
+            {
+                "id": "9229445470",
+                "href": "/resourceInventoryManagement/v2/9229445470",
+                "name": "BoltOnsRoaming",
+                "role": "Activo",
+                "entityType": "WRLS",
+                "@referredType": "Movil",
+                "description": "Paquetes de Roaming"
+            },
+            {
+                "id": "9229445464",
+                "href": "/resourceInventoryManagement/v2/9229445464",
+                "name": "BoltOnsInternational",
+                "role": "Activo",
+                "entityType": "WRLS",
+                "@referredType": "Movil",
+                "description": "Paquetes de Larga Distancia Internacional"
+            },
+            {
+                "id": "7805375629",
+                "href": "/resourceInventoryManagement/v2/7805375629",
+                "name": "SimCard",
+                "role": "Activo",
+                "entityType": "WRLS",
+                "@referredType": "Movil",
+                "description": "Tarjeta SIM"
+            },
+            {
+                "id": "103546474",
+                "href": "/resourceInventoryManagement/v2/103546474",
+                "name": "Device",
+                "role": "Activo",
+                "entityType": "WRLS",
+                "@referredType": "Movil",
+                "description": "Dispositivo"
+            }
+        ],
+        "productRelationship": [
+            {
+                "type": "component",
+                "product": {
+                    "id": "103546515",
+                    "name": "Plan",
+                    "publicId": "951097003",
+                    "description": "Plan",
+                    "productType": "bolton",
+                    "startDate": "2022-06-02T15:00:04-05:00",
+                    "productSpec": {
+                        "id": "44947065",
+                        "href": "undefined",
+                        "name": "Plan"
+                    },
+                    "characteristic": [
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "name": "status",
+                            "value": "active"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "4360648",
+                            "name": "SharingDataIndicatorConsumer",
+                            "value": "Yes"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "9341",
+                            "name": "Product",
+                            "value": "Caribu"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "9321",
+                            "name": "POClasificacion",
+                            "value": "Movil Control"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "1837331",
+                            "name": "DataCreditLimit",
+                            "value": "0"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "1837341",
+                            "name": "SMSCreditLimit",
+                            "value": "0"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "4167898",
+                            "name": "Defaultappsatfunpack",
+                            "value": "S_FP_WHAT|S_FP_FAFO|S_FP_FAME|S_FP_WAZE"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "9371",
+                            "name": "PlanInfo",
+                            "value": "http://www.cms.movistar.com.pe/documents/80379/5035939/Consulta+de+detalle+de+Plan/0d94e7e7-603a-4dc6-b8df-9a0db70412d8"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "1837321",
+                            "name": "VoiceCreditLimit",
+                            "value": "0"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "9391",
+                            "name": "PlanExtraUsageCreditLimit",
+                            "value": "0"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "1354561",
+                            "name": "UpgradeIndicator",
+                            "value": "1"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "4360638",
+                            "name": "SharingDataIndicatorOwner",
+                            "value": "Yes"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "9331",
+                            "name": "PlanGroup",
+                            "value": "MOVPOSR1"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "9361",
+                            "name": "PlanRank",
+                            "value": "29"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "component",
+                "product": {
+                    "id": "103546547",
+                    "name": "SimDevice",
+                    "publicId": "951097003",
+                    "description": "SIM y Dispositivo",
+                    "productType": "bolton",
+                    "startDate": "2022-06-02T15:00:04-05:00",
+                    "productSpec": {
+                        "href": "undefined",
+                        "name": "SIM y Dispositivo"
+                    },
+                    "characteristic": [
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "name": "status",
+                            "value": "active"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "1479761",
+                            "name": "DeviceMisuseInd",
+                            "value": "No"
+                        }
+                    ],
+                    "productRelationship": [
+                        {
+                            "type": "component",
+                            "product": {
+                                "id": "103546474",
+                                "name": "Device",
+                                "publicId": "951097003",
+                                "description": "Dispositivo",
+                                "productType": "bolton",
+                                "startDate": "2022-06-02T15:00:04-05:00",
+                                "productSpec": {
+                                    "href": "undefined",
+                                    "name": "Dispositivo"
+                                },
+                                "characteristic": [
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "name": "status",
+                                        "value": "active"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9291",
+                                        "name": "PostpagoFacil",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9921",
+                                        "name": "WarrantyManufacturerEndDate",
+                                        "value": "24/07/2019 00:00:00+DT"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9941",
+                                        "name": "AcquisitionType",
+                                        "value": "Sale"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "10001",
+                                        "name": "DeviceMoreDetails",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "10021",
+                                        "name": "DevicePurchaseDate",
+                                        "value": "+DT"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9871",
+                                        "name": "IMEI",
+                                        "value": "864980017193697"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9991",
+                                        "name": "DeviceUnlocked",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "16524",
+                                        "name": "SIMGroup",
+                                        "value": "Estandar"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9971",
+                                        "name": "LoanedInd",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9891",
+                                        "name": "DeviceType",
+                                        "value": "Multimedia"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "1333461",
+                                        "name": "ExternalPrice",
+                                        "value": "0.0"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9901",
+                                        "name": "ManufacturersWarrantyStartDate",
+                                        "value": "25/07/2018 11:25:41+DT"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "10011",
+                                        "name": "DeviceCommitmentPeriod",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "8811",
+                                        "name": "MARCA",
+                                        "value": "HUAWEI"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9981",
+                                        "name": "Outlet",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "10031",
+                                        "name": "RoboPlusIndicator",
+                                        "value": "N"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9881",
+                                        "name": "MODELO",
+                                        "value": "G2800"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9961",
+                                        "name": "DeviceGama",
+                                        "value": "Baja"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "888084",
+                                        "name": "DeviceCommercialClassification",
+                                        "value": "MultimediaD"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9931",
+                                        "name": "ShipmentAllowed",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9911",
+                                        "name": "ManufacturersWarrantyDuration",
+                                        "value": "12"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9951",
+                                        "name": "SAP_ID",
+                                        "value": "TMGPEHUG2800NE0001"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "component",
+                            "product": {
+                                "id": "7805375629",
+                                "name": "SimCard",
+                                "publicId": "951097003",
+                                "description": "Tarjeta SIM",
+                                "productType": "bolton",
+                                "startDate": "2022-06-02T15:00:04-05:00",
+                                "productSpec": {
+                                    "href": "undefined",
+                                    "name": "Tarjeta SIM"
+                                },
+                                "characteristic": [
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "name": "status",
+                                        "value": "active"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9751",
+                                        "name": "SIMTypeSKU",
+                                        "value": "TSPE4128234R510201"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9801",
+                                        "name": "PIN2",
+                                        "value": "2715"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9851",
+                                        "name": "KID",
+                                        "value": "83FC511D1A53E03C"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9831",
+                                        "name": "KI",
+                                        "value": "2A02B3B0ABECE7E6D2952ED2659C491F"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9791",
+                                        "name": "PUK1",
+                                        "value": "10174066"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9841",
+                                        "name": "KIC",
+                                        "value": "1DFC39706CD74F68"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9781",
+                                        "name": "PIN1",
+                                        "value": "1234"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "1333461",
+                                        "name": "ExternalPrice",
+                                        "value": "5.0"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "1829063",
+                                        "name": "CARD_PROFILE",
+                                        "value": "90.02.OB"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9821",
+                                        "name": "ADM1",
+                                        "value": "34717200A8A5025D"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9941",
+                                        "name": "AcquisitionType",
+                                        "value": "Sale"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "1829053",
+                                        "name": "TRANSPORT_KEY",
+                                        "value": "003"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "16524",
+                                        "name": "SIMGroup",
+                                        "value": "Estandar"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9861",
+                                        "name": "Technology",
+                                        "value": "4G"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "799244",
+                                        "name": "ICCID",
+                                        "value": "8951064021900590709"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9811",
+                                        "name": "PUK2",
+                                        "value": "25987599"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "component",
+                "product": {
+                    "id": "7731466499",
+                    "name": "Roaming",
+                    "publicId": "951097003",
+                    "description": "Roaming",
+                    "productType": "bolton",
+                    "startDate": "2022-06-02T15:00:04-05:00",
+                    "productSpec": {
+                        "href": "undefined",
+                        "name": "Roaming"
+                    },
+                    "characteristic": [
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "name": "status",
+                            "value": "active"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "14944",
+                            "name": "DurationUnitOfMeasurement",
+                            "value": "D"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "1304971",
+                            "name": "TempInd",
+                            "value": "Yes"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "12044",
+                            "name": "RoamingSMS",
+                            "value": "Inactive"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "12054",
+                            "name": "RoamingData",
+                            "value": "Controlled"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "12014",
+                            "name": "RoamingVoice",
+                            "value": "Inactive"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "11944",
+                            "name": "EndDate",
+                            "value": "01/01/2099 23:59:59+DT"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "1304991",
+                            "name": "CutDate",
+                            "value": "01/01/2099 00:00:00+DT"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "11924",
+                            "name": "StartDate",
+                            "value": "08/03/2019 00:00:00+DT"
+                        }
+                    ],
+                    "productRelationship": [
+                        {
+                            "type": "component",
+                            "product": {
+                                "id": "9229445471",
+                                "name": "BoltOnsRoamingData",
+                                "publicId": "951097003",
+                                "description": "Paquetes Roaming Datos",
+                                "productType": "bolton",
+                                "startDate": "2022-06-02T15:00:04-05:00",
+                                "productSpec": {
+                                    "href": "undefined",
+                                    "name": "Paquetes Roaming Datos"
+                                },
+                                "characteristic": [
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "name": "status",
+                                        "value": "active"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "component",
+                            "product": {
+                                "id": "9229445470",
+                                "name": "BoltOnsRoaming",
+                                "publicId": "951097003",
+                                "description": "Paquetes de Roaming",
+                                "productType": "bolton",
+                                "startDate": "2022-06-02T15:00:04-05:00",
+                                "productSpec": {
+                                    "href": "undefined",
+                                    "name": "Paquetes de Roaming"
+                                },
+                                "characteristic": [
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "name": "status",
+                                        "value": "active"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "component",
+                "product": {
+                    "id": "7362054509",
+                    "name": "PromotionsandDiscounts",
+                    "publicId": "951097003",
+                    "description": "Promociones y Descuentos Especiales",
+                    "productType": "bolton",
+                    "startDate": "2022-06-02T15:00:04-05:00",
+                    "productSpec": {
+                        "href": "undefined",
+                        "name": "Promociones y Descuentos Especiales"
+                    },
+                    "characteristic": [
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "name": "status",
+                            "value": "active"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "component",
+                "product": {
+                    "id": "103546506",
+                    "name": "Voice",
+                    "publicId": "951097003",
+                    "description": "Voz",
+                    "productType": "bolton",
+                    "startDate": "2022-06-02T15:00:04-05:00",
+                    "productSpec": {
+                        "href": "undefined",
+                        "name": "Voz"
+                    },
+                    "characteristic": [
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "name": "status",
+                            "value": "active"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "9431",
+                            "name": "Notifyavailability",
+                            "value": "Inactivo"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "9441",
+                            "name": "LostCallNotification",
+                            "value": "Inactivo"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "9461",
+                            "name": "VoiceToText",
+                            "value": "N"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "9411",
+                            "name": "VoiceMail",
+                            "value": "Activo"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "9421",
+                            "name": "CallerID",
+                            "value": "Activo"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "9401",
+                            "name": "CallWaiting",
+                            "value": "Activo"
+                        },
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "code": "-1",
+                            "name": "VPNPlatform",
+                            "value": "Y"
+                        }
+                    ],
+                    "productRelationship": [
+                        {
+                            "type": "component",
+                            "product": {
+                                "id": "103546499",
+                                "name": "OutgoingCall",
+                                "publicId": "951097003",
+                                "description": "Llamada saliente",
+                                "productType": "bolton",
+                                "startDate": "2022-06-02T15:00:04-05:00",
+                                "productSpec": {
+                                    "href": "undefined",
+                                    "name": "Llamada saliente"
+                                },
+                                "characteristic": [
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "name": "status",
+                                        "value": "active"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9481",
+                                        "name": "ForwardCallsbydefault",
+                                        "value": "Activo"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9511",
+                                        "name": "ForwardCallsInconditional",
+                                        "value": "Activo"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9491",
+                                        "name": "ForwardCallsBusyTone",
+                                        "value": "Activo"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9471",
+                                        "name": "ConferenceCalls",
+                                        "value": "Inactivo"
+                                    },
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "code": "9501",
+                                        "name": "ForwardCallsNoAnswer",
+                                        "value": "Activo"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "component",
+                "product": {
+                    "id": "268351725",
+                    "name": "International",
+                    "publicId": "951097003",
+                    "description": "Internacional (LDI)",
+                    "productType": "bolton",
+                    "startDate": "2022-06-02T15:00:04-05:00",
+                    "productSpec": {
+                        "href": "undefined",
+                        "name": "Internacional (LDI)"
+                    },
+                    "characteristic": [
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "name": "status",
+                            "value": "active"
+                        }
+                    ],
+                    "productRelationship": [
+                        {
+                            "type": "component",
+                            "product": {
+                                "id": "9229445464",
+                                "name": "BoltOnsInternational",
+                                "publicId": "951097003",
+                                "description": "Paquetes de Larga Distancia Internacional",
+                                "productType": "bolton",
+                                "startDate": "2022-06-02T15:00:04-05:00",
+                                "productSpec": {
+                                    "href": "undefined",
+                                    "name": "Paquetes de Larga Distancia Internacional"
+                                },
+                                "characteristic": [
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "name": "status",
+                                        "value": "active"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "component",
+                "product": {
+                    "id": "103546493",
+                    "name": "Data",
+                    "publicId": "951097003",
+                    "description": "Datos",
+                    "productType": "bolton",
+                    "startDate": "2022-06-02T15:00:04-05:00",
+                    "productSpec": {
+                        "href": "undefined",
+                        "name": "Datos"
+                    },
+                    "characteristic": [
+                        {
+                            "@type": "StringType",
+                            "valueType": "String",
+                            "name": "status",
+                            "value": "active"
+                        }
+                    ],
+                    "productRelationship": [
+                        {
+                            "type": "component",
+                            "product": {
+                                "id": "9229445463",
+                                "name": "BoltOnsData",
+                                "publicId": "951097003",
+                                "description": "Paquete de Datos",
+                                "productType": "bolton",
+                                "startDate": "2022-06-02T15:00:04-05:00",
+                                "productSpec": {
+                                    "href": "undefined",
+                                    "name": "Paquete de Datos"
+                                },
+                                "characteristic": [
+                                    {
+                                        "@type": "StringType",
+                                        "valueType": "String",
+                                        "name": "status",
+                                        "value": "active"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "productPrice": [
+            {
+                "id": "9229445468",
+                "name": "RV Plan Ahorro Mi Movistar S/37.9 III IP",
+                "description": "Plan",
+                "priceType": "recurring",
+                "recurringChargePeriod": "monthly",
+                "price": {
+                    "amount": 32.11,
+                    "units": "PEN"
+                },
+                "taxIncluded": false,
+                "taxRate": 0.18,
+                "taxType": "IGV",
+                "additionalData": [
+                    {
+                        "key": "PlanIdBO",
+                        "value": "2991597"
+                    },
+                    {
+                        "key": "typeRent",
+                        "value": "R"
+                    }
+                ]
+            }
+        ],
+        "place": [
+            {
+                "id": "177906",
+                "name": "billing",
+                "entityType": "address",
+                "description": "NN,,,,,G,24,NN,,ILO,ILO,MOQUEGUA  ILO MOQUEGUA Peru"
+            }
+        ],
+        "relatedParty": [
+            {
+                "id": "40016174",
+                "name": "ANA MARIA GUERRERO PONCE",
+                "nationalId": "04634198",
+                "nationalIdType": "DNI",
+                "role": "customer",
+                "description": "Residencial"
+            }
+        ]
+    }
+]
